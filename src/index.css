@@ -306,6 +306,7 @@ small {
   text-align: center;
   padding-top: 6%;
   font-weight: 500;
+  font-size: 3rem;
 }
 .mark {
   width: 80%;
@@ -770,7 +771,7 @@ small {
 @media screen and (max-width: 700px) {
   .home-h1 {
     width: 100%;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 500;
   }
   .home-p1 {
@@ -843,7 +844,7 @@ small {
     font-size: 2.7rem;
   }
   .foot {
-    padding: 5% 10%;
+    padding: 7% 10%;
     text-align: center;
     height: 73vh;
   }
@@ -853,12 +854,17 @@ small {
   }
   .sub-foot1 p {
     line-height: 2.3rem;
+    font-size: 1.3rem;
+  }
+  small {
+    font-size: 1.3rem;
   }
   #icons {
-    float: left;
+    float: none;
     text-align: center;
     width: 50%;
     margin: 3rem auto 0;
+    font-size: 1.5rem;
   }
   .mark {
     display: block;
@@ -875,6 +881,8 @@ small {
   }
   .headphone1 {
     height: 10rem;
+    font-size: 2rem;
+    padding-top: 9%;
   }
   .mark-prod,
   .features {
@@ -929,6 +937,6 @@ small {
     right: 0rem;
     padding: 2rem;
     z-index: 2;
-    width: 30rem;
+    width: 100%;
   }
 }
