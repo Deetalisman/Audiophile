@@ -705,13 +705,14 @@ small {
   }
   .list {
     position: absolute;
-    background-color: rgb(165, 163, 163);
+    background-color: rgba(105, 101, 101, 0.4);
     width: 100%;
     left: 0;
     top: 8rem;
     text-align: center;
     padding: 5%;
     display: none;
+    padding: 10%;
   }
   .list li {
     display: block;
