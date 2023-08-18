@@ -1,0 +1,934 @@
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+:root {
+  --black: black;
+  --white: white;
+  --coral: coral;
+  --gray: gray;
+  --grey: rgb(244, 242, 242);
+  --bg: rgb(227, 226, 226);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 64.2%;
+}
+p {
+  font-size: 1.8rem;
+}
+h1 {
+  font-size: 2.9rem;
+}
+h2 {
+  font-size: 2rem;
+}
+.app {
+  position: relative;
+}
+#cart {
+  width: 3.5rem;
+  height: 3.5rem;
+  cursor: pointer;
+}
+.head {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem 10%;
+  background-color: var(--black);
+  color: var(--white);
+  border-bottom: 1px solid grey;
+}
+ul {
+  margin-top: 1rem;
+}
+ul li {
+  display: inline-block;
+  cursor: pointer;
+}
+ul li a {
+  margin: 0 3rem;
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: var(--white);
+}
+ul li a:hover {
+  color: var(--coral);
+}
+.active {
+  color: var(--coral);
+}
+.cartimg {
+  width: 8rem;
+}
+.cart {
+  position: absolute;
+  background-color: rgb(249, 245, 245);
+  top: 9.6rem;
+  right: 8rem;
+  padding: 3rem;
+  z-index: 2;
+  box-shadow: 1px 5px 5px 5px rgba(0, 0, 0, 0.3);
+  width: 40rem;
+}
+.emptycart {
+  width: 20rem;
+}
+#ham {
+  display: none;
+}
+.home {
+  background-image: url(./images/home/desktop/image-hero.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 88vh;
+  background-size: cover;
+  color: var(--white);
+  padding: 13% 10%;
+}
+button {
+  padding: 1.5rem 2.5rem;
+  font-size: 1.8rem;
+  background-color: var(--coral);
+  color: var(--white);
+  border: 0;
+  font-weight: 500;
+  cursor: pointer;
+}
+.home-p {
+  letter-spacing: 2rem;
+  color: var(--gray);
+}
+.home-h1 {
+  font-size: 5rem;
+  width: 40%;
+  margin-top: 1rem;
+  letter-spacing: 0.8rem;
+}
+.home-p1 {
+  width: 22%;
+  font-size: 1.5rem;
+  color: var(--gray);
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+  line-height: 2.5rem;
+}
+
+.homedisplay {
+  margin-top: 10%;
+  padding: 0 10% 10%;
+  display: flex;
+  justify-content: space-between;
+}
+.category {
+  background-color: var(--grey);
+  width: 30%;
+  height: 19rem;
+  position: relative;
+  text-align: center;
+  padding: 7% 2% 0;
+  border-radius: 0.6rem;
+  cursor: pointer;
+}
+.category:hover {
+  border: 3px dotted coral;
+}
+.headphone {
+  width: 18rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -7rem;
+}
+.cat-title {
+  font-weight: bold;
+  letter-spacing: 0.3rem;
+}
+.shop {
+  margin-top: 2rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.shop span {
+  font-size: 2rem;
+  margin-left: 2rem;
+  color: var(--coral);
+}
+.speakerdisplay {
+  width: 80%;
+  margin: 0 10% 5%;
+  display: flex;
+  height: 80vh;
+  justify-content: space-between;
+  background-color: rgb(245, 148, 112);
+  padding: 10% 10% 3%;
+  border-radius: 0.5rem;
+}
+.speakerimg {
+  width: 40rem;
+}
+.sub-sd {
+  width: 40%;
+  color: var(--white);
+  margin-top: 2rem;
+  padding-top: 5%;
+}
+.sub-sd h2 {
+  font-size: 5rem;
+  letter-spacing: 1rem;
+  line-height: 4.6rem;
+  font-weight: 500;
+}
+.sub-sd p {
+  margin-top: 2rem;
+  color: rgb(227, 226, 226);
+}
+.speak-but {
+  background-color: var(--black);
+  margin-top: 4rem;
+}
+.speakerdisplay2 {
+  background-image: url(./images/home/desktop/image-speaker-zx7.jpg);
+  width: 80%;
+  margin: 10% 10% 3%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 33rem;
+  padding: 6% 5%;
+  border-radius: 0.7rem;
+}
+.speakerdisplay2 h2,
+.sub-eardisplay h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.speak2-but {
+  background-color: transparent;
+  border: 1px solid black;
+  color: var(--black);
+}
+.earphonedisplay {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 10% 6%;
+}
+.sub-eardisplay {
+  background-color: var(--bg);
+  width: 50%;
+  padding: 8%;
+  border-radius: 0.5rem;
+}
+#ear {
+  width: 48%;
+}
+#sub-ear {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+.building {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 10% 5%;
+}
+.sub-build {
+  width: 40%;
+  padding-top: 15%;
+}
+#person {
+  width: 100%;
+  height: 70vh;
+  border-radius: 0.6rem;
+}
+picture {
+  width: 50%;
+}
+.sub-build h2 {
+  font-size: 3.4rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.sub-build p {
+  color: var(--gray);
+  font-size: 1.5rem;
+}
+.sub-build h2 span {
+  font-size: 3.4rem;
+  color: var(--coral);
+}
+.foot {
+  background-color: var(--black);
+  color: var(--white);
+  padding: 5% 10%;
+}
+.icon {
+  font-size: 3rem;
+  color: var(--white);
+  margin: 0 1rem;
+}
+.sub-foot {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.sub-foot1 p {
+  margin-top: 2rem;
+  color: var(--gray);
+  margin-bottom: 6rem;
+  font-size: 1.5rem;
+  width: 50%;
+}
+small {
+  font-size: 1.5rem;
+  color: var(--gray);
+}
+#icons {
+  float: right;
+  margin-top: 0rem;
+}
+.sub-foot ul li {
+  font-size: 1.5rem;
+}
+.sub-foot ul li a {
+  margin: 0 1.7rem;
+}
+.headphone1 {
+  height: 25rem;
+  background-color: var(--black);
+  color: var(--white);
+  text-align: center;
+  padding-top: 6%;
+  font-weight: 500;
+}
+.mark {
+  width: 80%;
+  margin: 4% 10%;
+  display: flex;
+  justify-content: space-between;
+}
+.markimg {
+  width: 50%;
+}
+.sub-mark {
+  width: 40%;
+  padding-top: 10%;
+}
+.mark-p {
+  letter-spacing: 1rem;
+  color: var(--coral);
+}
+.mark h1 {
+  margin-top: 2rem;
+}
+.mark-p1 {
+  margin-top: 2rem;
+  color: var(--gray);
+}
+.mark-but {
+  margin-top: 3rem;
+  font-weight: 500;
+}
+.mark-prod {
+  width: 100%;
+  margin: 4% 0;
+  display: flex;
+  justify-content: space-between;
+}
+.seeproduct {
+  width: 80%;
+  margin: 5% 10%;
+}
+.gallery {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 7%;
+}
+.gallery img {
+  border-radius: 0.5rem;
+}
+.gallery1 {
+  width: 40%;
+}
+.gallery1 img {
+  width: 90%;
+  height: 30rem;
+  margin-bottom: 1rem;
+}
+.gthree {
+  width: 60%;
+  height: 61rem;
+}
+.back {
+  cursor: pointer;
+}
+.alsos {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6%;
+}
+.also {
+  text-align: center;
+  width: 30%;
+}
+.also h2 {
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+.pre-img {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+.coun {
+  cursor: pointer;
+}
+.counts {
+  display: flex;
+  justify-content: space-between;
+  width: 15rem;
+  background-color: var(--bg);
+  padding: 1rem 2rem;
+  margin-right: 2rem;
+}
+.sub-sp1 {
+  display: flex;
+  margin-top: 4rem;
+  width: 90%;
+}
+.prod-p {
+  color: var(--coral);
+  letter-spacing: 1rem;
+  margin-bottom: 2rem;
+}
+.prod-h1 {
+  font-size: 5rem;
+  font-weight: 500;
+}
+.price {
+  margin-top: 2rem;
+  font-weight: 600;
+  font-size: 2rem;
+}
+.features {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4rem;
+}
+.feature {
+  width: 50%;
+}
+.feature p {
+  color: var(--gray);
+  margin-top: 3rem;
+  line-height: 2.4rem;
+  font-size: 1.5rem;
+}
+.include {
+  margin-bottom: 1rem;
+}
+.include span {
+  color: var(--coral);
+  font-size: 1.6rem;
+  margin-right: 2rem;
+}
+.in-box h1 {
+  margin-bottom: 2rem;
+}
+
+.cart1 {
+  display: flex;
+  justify-content: space-between;
+}
+.cart3,
+.cart2,
+.cart5 {
+  display: flex;
+  justify-content: space-between;
+}
+.cart2 {
+  margin-top: 2rem;
+}
+.cart4 {
+  margin-left: 1rem;
+}
+.cart4 p:first-child {
+  font-size: 2rem;
+}
+.cart4 p:last-child {
+  margin-top: 2rem;
+}
+.cart5 {
+  margin-top: 3rem;
+}
+.cartc {
+  height: 5rem;
+  width: 8rem;
+  padding: 1rem;
+}
+.cartisempty {
+  text-align: center;
+}
+@media screen and (max-width: 1300px) {
+  .speakerdisplay {
+    padding: 10% 5% 4%;
+  }
+  .category {
+    width: 31%;
+  }
+  .home-p1 {
+    width: 30%;
+  }
+  #person {
+    height: 60vh;
+    width: 100%;
+  }
+  .sub-build {
+    width: 45%;
+    padding-top: 8%;
+  }
+  .sub-sp1 {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .homedisplay,
+  .speakerdisplay,
+  .speakerdisplay2,
+  .earphonedisplay,
+  .building,
+  .seeproduct {
+    width: 90%;
+    margin: 5% 5%;
+  }
+  .homedisplay {
+    width: 100%;
+    margin: 0;
+    flex-wrap: wrap;
+    margin-top: 15%;
+  }
+  .speakerimg {
+    height: 45rem;
+  }
+  .speakerdisplay {
+    height: 70vh;
+  }
+  .home {
+    padding: 18% 6%;
+  }
+  .home-h1 {
+    font-size: 4.3rem;
+    letter-spacing: 0.4rem;
+  }
+  ul li a {
+    margin: 0 2rem;
+    font-size: 1.6rem;
+  }
+  .head {
+    padding: 3rem 5%;
+  }
+  .sub-foot1 ul li a {
+    margin: 0 1rem;
+    font-size: 1.4rem;
+  }
+  .cat-title {
+    margin-top: 2rem;
+  }
+  .mark {
+    width: 90%;
+    margin: 4% 5%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .markimg {
+    width: 50%;
+  }
+  .sub-mark {
+    width: 40%;
+    padding-top: 6%;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .home {
+    background-image: url(./images/home/tablet/image-hero.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 88vh;
+    background-size: cover;
+    color: var(--white);
+    padding: 23% 10%;
+    text-align: center;
+  }
+  .home-p {
+    letter-spacing: 1rem;
+    color: var(--gray);
+  }
+  .home-h1 {
+    font-size: 4rem;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    letter-spacing: 0.7rem;
+    font-weight: 500;
+  }
+  .home-p1 {
+    width: 50%;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    color: var(--gray);
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+  .homedisplay {
+    width: 100%;
+  }
+  .category {
+    height: 17rem;
+  }
+  .speakerdisplay {
+    display: block;
+    height: auto;
+    text-align: center;
+    padding: 7% 0;
+  }
+  .sub-sd {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 2rem;
+  }
+  .sub-sd p {
+    text-align: center;
+  }
+  .speakerimg {
+    height: 30rem;
+    width: 25rem;
+  }
+  .speakerdisplay2 {
+    background-image: url(./images/home/tablet/image-speaker-zx7.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 35rem;
+    padding: 10% 10%;
+  }
+  #sub-ear {
+    width: 100%;
+    height: 35rem;
+  }
+  .sub-eardisplay,
+  #ear {
+    height: 35rem;
+  }
+  .sub-eardisplay {
+    padding: 12% 0 0 10%;
+  }
+  .building {
+    flex-direction: column-reverse;
+    margin-top: 5%;
+  }
+  #person {
+    width: 100%;
+    height: 40rem;
+  }
+  picture {
+    width: 100%;
+  }
+  .sub-build {
+    width: 100%;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 5%;
+  }
+  .sub-build h2 {
+    font-size: 3.2rem;
+  }
+  .foot {
+    padding: 5%;
+  }
+  .sub-foot {
+    display: block;
+  }
+  .sub-foot1 p {
+    width: 100%;
+    margin-top: 4rem;
+  }
+  .sub-foot ul {
+    margin-top: 3rem;
+  }
+  .sub-foot ul li a:first-child {
+    margin: 0;
+    margin-right: 2rem;
+  }
+  .sub-mark {
+    width: 45%;
+    padding-top: 6%;
+  }
+  .mark h1 {
+    font-size: 2.3rem;
+  }
+  .mark-p1 {
+    font-size: 1.3rem;
+  }
+  .mark-but {
+    font-size: 1.3rem;
+    padding: 1rem;
+  }
+  .counts {
+    width: 12rem;
+  }
+  #add {
+    font-size: 1.4rem;
+    padding: 1rem 1.3rem;
+  }
+  .prod-h1 {
+    font-size: 3.5rem;
+  }
+  .mark-p1 {
+    font-size: 1.3rem;
+  }
+  #ham {
+    display: block;
+    width: 5rem;
+    height: 3rem;
+    cursor: pointer;
+  }
+  .head {
+    position: relative;
+  }
+  .list {
+    position: absolute;
+    background-color: rgb(165, 163, 163);
+    width: 100%;
+    left: 0;
+    top: 8rem;
+    text-align: center;
+    padding: 5%;
+    display: none;
+  }
+  .list li {
+    display: block;
+    margin-bottom: 5rem;
+  }
+  .list li a {
+    font-size: 2rem;
+  }
+  .hide {
+    display: block;
+  }
+  .gallery1 {
+    width: 50%;
+  }
+  .gallery1 img {
+    width: 90%;
+    height: 24.5rem;
+    margin-bottom: 1rem;
+  }
+  .gthree {
+    width: 50%;
+    height: 50rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  .homedisplay {
+    margin-top: 15rem;
+  }
+  .home {
+    padding: 29% 10%;
+  }
+  .home-h1 {
+    font-size: 4rem;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 2rem;
+    letter-spacing: 0.7rem;
+    font-weight: 500;
+  }
+  .home-p1 {
+    width: 60%;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    color: var(--gray);
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+  .cat-title {
+    font-size: 1.5rem;
+    margin-top: 3rem;
+    letter-spacing: 0rem;
+  }
+  .headphone {
+    width: 15rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .home-h1 {
+    width: 100%;
+    font-size: 3rem;
+    font-weight: 500;
+  }
+  .home-p1 {
+    width: 90%;
+  }
+  .home {
+    background-image: url(./images/home/mobile/image-hero.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 88vh;
+    background-size: cover;
+    color: var(--white);
+    padding: 25vh 10%;
+    text-align: center;
+  }
+  button {
+    font-size: 1.5rem;
+  }
+  .category {
+    width: 100%;
+    margin-bottom: 10rem;
+  }
+  .speakerimg {
+    width: 20rem;
+    height: 25rem;
+  }
+  .speakerdisplay {
+    padding: 8% 0;
+  }
+  .sub-sd {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 2rem;
+  }
+  .sub-sd h2 {
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+  .speakerdisplay2 {
+    background-image: url(./images/home/mobile/image-speaker-zx7.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 35rem;
+    padding: 25% 7%;
+  }
+  .speakerdisplay2 h2,
+  .sub-eardisplay h2 {
+    font-size: 2.5rem;
+  }
+  .speak2-but {
+    font-size: 1.4rem;
+  }
+  .earphonedisplay {
+    display: block;
+  }
+  .sub-eardisplay {
+    width: 100%;
+    margin-top: 2rem;
+    height: 25rem;
+  }
+  .sub-build {
+    width: 100%;
+  }
+  .sub-build h2 {
+    font-size: 2.7rem;
+    width: 100%;
+  }
+  .sub-build h2 span {
+    font-size: 2.7rem;
+  }
+  .foot {
+    padding: 5% 10%;
+    text-align: center;
+    height: 73vh;
+  }
+  .sub-foot ul li {
+    display: block;
+    margin-bottom: 2rem;
+  }
+  .sub-foot1 p {
+    line-height: 2.3rem;
+  }
+  #icons {
+    float: left;
+    text-align: center;
+    width: 50%;
+    margin: 3rem auto 0;
+  }
+  .mark {
+    display: block;
+  }
+  .markimg {
+    width: 100%;
+  }
+  .sub-mark {
+    width: 100%;
+  }
+  .colo {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .headphone1 {
+    height: 10rem;
+  }
+  .mark-prod,
+  .features {
+    display: block;
+  }
+  .feature {
+    width: 100%;
+  }
+  .in-box {
+    margin-top: 3rem;
+  }
+  #ham {
+    width: 4rem;
+  }
+  .head h1 {
+    font-size: 2.6rem;
+  }
+  .feature h1,
+  .in-box {
+    font-size: 2.5rem;
+  }
+  .alsos {
+    flex-wrap: wrap;
+  }
+  .also {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+  .pre-img {
+    height: 40rem;
+  }
+  .gallery {
+    display: block;
+    justify-content: space-between;
+    margin-top: 7%;
+  }
+  .gallery1 {
+    width: 100%;
+  }
+  .gallery1 img {
+    width: 100%;
+    height: 30rem;
+    margin-bottom: 1rem;
+  }
+  .gthree {
+    width: 100%;
+    height: 40rem;
+  }
+  .cart {
+    position: absolute;
+    top: 9.6rem;
+    right: 0rem;
+    padding: 2rem;
+    z-index: 2;
+    width: 30rem;
+  }
+}
