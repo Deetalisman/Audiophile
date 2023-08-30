@@ -966,6 +966,9 @@ aside {
   .home-p1 {
     width: 90%;
   }
+  .payment {
+    width: 100%;
+  }
   .home {
     background-image: url(./images/home/mobile/image-hero.jpg);
     background-position: center;

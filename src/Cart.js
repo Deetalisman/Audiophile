@@ -120,7 +120,7 @@ function Cartdetails({ cartItem, proj, count, setCount }) {
           className="cartimg"
         />
         <div className="cart4">
-          <p>{cartItem.shortName}</p>
+          <p>{cartItem.name}</p>
           <p>${cartItem.price}</p>
         </div>
       </div>
