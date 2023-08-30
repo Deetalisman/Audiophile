@@ -146,7 +146,12 @@ function App() {
           </Switch>
         )}
         {check && (
-          <Checkout setCheck={setCheck} cartItems={cartItems} count={count} />
+          <Checkout
+            setCheck={setCheck}
+            cartItems={cartItems}
+            count={count}
+            setSee={setSee}
+          />
         )}
 
         {see && (

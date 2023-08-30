@@ -8,7 +8,7 @@ import zx7 from "./images/cart/image-zx7-speaker.jpg";
 import zx9 from "./images/cart/image-zx9-speaker.jpg";
 import checkimg from "./images/checkout/icon-cash-on-delivery.svg";
 import { useState } from "react";
-function Checkout({ setCheck, cartItems, count }) {
+function Checkout({ setCheck, cartItems, count, setSee }) {
   function handleGoback() {
     setCheck(false);
   }
@@ -23,7 +23,13 @@ function Checkout({ setCheck, cartItems, count }) {
         count={count}
         setCheckout={setCheckout}
       />
-      {checkout && <Completed setCheckout={setCheckout} />}
+      {checkout && (
+        <Completed
+          setCheckout={setCheckout}
+          setCheck={setCheck}
+          setSee={setSee}
+        />
+      )}
     </div>
   );
 }
@@ -335,21 +341,30 @@ function Totalcheck({ handleSubmit }) {
   );
 }
 
-function Completed({ setCheckout }) {
+function Completed({ setCheckout, setCheck, setSee }) {
   return (
     <div className="completed">
-      <Maincomplete setCheckout={setCheckout} />
+      <Maincomplete
+        setCheckout={setCheckout}
+        setCheck={setCheck}
+        setSee={setSee}
+      />
     </div>
   );
 }
 
-function Maincomplete({ setCheckout }) {
+function Maincomplete({ setCheckout, setCheck, setSee }) {
+  function handlecheckout() {
+    setCheckout(false);
+    setCheck(false);
+    setSee(false);
+  }
   return (
     <div className="maincomplete">
       <img src={checkimg} className="checkimg" />
       <h1 className="mchead">THANK YOU FOR YOUR ORDER</h1>
       <p className="mcp">You will receive an email confirmation shortly</p>
-      <button className="continue" onClick={() => setCheckout(false)}>
+      <button className="continue" onClick={handlecheckout}>
         BACK TO HOME
       </button>
     </div>

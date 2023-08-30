@@ -522,7 +522,7 @@ mark {
   width: 35%;
   background-color: white;
   box-shadow: 5px 5px 15px rgba(105, 101, 101, 0.4);
-  max-height: 60vh;
+  height: auto;
   padding: 2%;
   border-radius: 1rem;
 }
