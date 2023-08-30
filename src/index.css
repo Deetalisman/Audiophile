@@ -27,6 +27,7 @@ h1 {
 h2 {
   font-size: 2rem;
 }
+
 .app {
   position: relative;
 }
@@ -73,10 +74,31 @@ ul li a:hover {
   padding: 3rem;
   z-index: 2;
   box-shadow: 1px 5px 5px 5px rgba(0, 0, 0, 0.3);
-  width: 40rem;
+  width: 50rem;
+  border-radius: 1rem;
+}
+.cartcart {
+  max-height: 40vh;
+  overflow: scroll;
+  margin-top: 2rem;
+}
+.checkout {
+  width: 100%;
+  margin-top: 2rem;
 }
 .emptycart {
-  width: 20rem;
+  width: 12rem;
+  margin-top: 2rem;
+}
+.none {
+  display: none;
+}
+.goback {
+  cursor: pointer;
+  width: 10rem;
+}
+.remove {
+  cursor: pointer;
 }
 #ham {
   display: none;
@@ -475,6 +497,143 @@ small {
 .cartisempty {
   text-align: center;
 }
+label {
+  font-size: 2rem;
+}
+form input {
+  width: 90%;
+  font-size: 1.7rem;
+  height: 4rem;
+  outline: none;
+  border-radius: 0.5rem;
+  padding-left: 1rem;
+  margin-top: 0.6rem;
+}
+.checkout {
+  width: 80%;
+  margin: 2% 10%;
+}
+.checkoutform {
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+mark {
+  width: 35%;
+  background-color: white;
+  box-shadow: 5px 5px 15px rgba(105, 101, 101, 0.4);
+  max-height: 60vh;
+  padding: 2%;
+  border-radius: 1rem;
+}
+.error {
+  border: 2px solid red;
+}
+.error1 {
+  color: red;
+  margin: 0;
+}
+form {
+  width: 60%;
+  padding: 3%;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 15px rgba(105, 101, 101, 0.4);
+}
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 1rem;
+}
+nav small {
+  width: 50%;
+  margin-bottom: 2rem;
+}
+article {
+  margin-top: 3rem;
+  width: 100%;
+}
+#address {
+  width: 95%;
+}
+article nav {
+  width: 100%;
+}
+.checkdetail {
+  color: red;
+  margin-top: 1rem;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+.payment {
+  display: flex;
+}
+.checkbox {
+  width: 2rem;
+  height: 2rem;
+  margin: 0.3rem 2rem 0;
+}
+.payment {
+  border: 2px solid gray;
+  width: 70%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+aside {
+  margin-top: 2rem;
+  width: 95%;
+}
+.checkhead {
+  margin-bottom: 3rem;
+}
+.checkcount {
+  margin-top: 1.5rem;
+  font-size: 2rem;
+}
+.totalcheck {
+  margin-top: 2rem;
+}
+.sub-tc {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+.continue {
+  width: 100%;
+  margin-top: 2rem;
+}
+.completed {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.maincomplete {
+  background-color: white;
+  width: 60rem;
+  height: 53vh;
+  border-radius: 0.7rem;
+  padding: 5% 4%;
+}
+.checkimg {
+  width: 14rem;
+}
+.mchead {
+  margin-top: 3rem;
+  font-weight: 500;
+  width: 60%;
+}
+.mcp {
+  font-size: 1.3rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
 @media screen and (max-width: 1300px) {
   .speakerdisplay {
     padding: 10% 5% 4%;
@@ -546,6 +705,7 @@ small {
     margin: 4% 5%;
     display: flex;
     justify-content: space-between;
+    padding: 4%;
   }
   .markimg {
     width: 50%;
@@ -553,6 +713,10 @@ small {
   .sub-mark {
     width: 40%;
     padding-top: 6%;
+  }
+  .checkout {
+    width: 90%;
+    margin: 2% 5%;
   }
 }
 @media screen and (max-width: 1000px) {
@@ -736,6 +900,20 @@ small {
     width: 50%;
     height: 50rem;
   }
+  .checkout {
+    margin: 5%;
+  }
+  .checkoutform {
+    flex-direction: column-reverse;
+  }
+  mark {
+    width: 40rem;
+    margin-bottom: 5rem;
+    padding: 2rem;
+  }
+  form {
+    width: 100%;
+  }
 }
 @media screen and (max-width: 800px) {
   .homedisplay {
@@ -767,6 +945,16 @@ small {
   }
   .headphone {
     width: 15rem;
+  }
+  .maincomplete {
+    background-color: white;
+    width: 40rem;
+    height: auto;
+    border-radius: 0.7rem;
+    padding: 5% 4%;
+  }
+  .mchead {
+    width: 80%;
   }
 }
 @media screen and (max-width: 700px) {
@@ -939,5 +1127,34 @@ small {
     padding: 2rem;
     z-index: 2;
     width: 100%;
+  }
+}
+@media screen and (max-width: 550px) {
+  nav small {
+    width: 100%;
+  }
+  #address {
+    width: 90%;
+  }
+  form {
+    padding: 3rem;
+  }
+  mark {
+    padding: 3rem;
+    width: 100%;
+  }
+  .maincomplete {
+    background-color: white;
+    width: 80%;
+    height: auto;
+    border-radius: 0.7rem;
+    padding: 5% 5%;
+  }
+  .mchead {
+    width: 100%;
+    font-size: 1.8rem;
+  }
+  .checkimg {
+    width: 10rem;
   }
 }

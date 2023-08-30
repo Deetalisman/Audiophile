@@ -9,6 +9,9 @@ import { useEffect, useState } from "react";
 import Seeproduct from "./seeproduct";
 import products from "./products.json";
 import { Cart } from "./Cart";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Checkout from "./checkout";
 
 function App() {
   const [home, setHome] = useState(true);
@@ -16,6 +19,7 @@ function App() {
   const [speak, setSpeak] = useState(false);
   const [ear, setEar] = useState(false);
   const [see, setSee] = useState(false);
+  const [check, setCheck] = useState(false);
   const [isHam, setIsHam] = useState(false);
 
   function handleHome() {
@@ -24,6 +28,8 @@ function App() {
     setSpeak(false);
     setEar(false);
     setIsHam(false);
+    setCart(false);
+    setSee(false);
   }
   function handleHead() {
     setHead(true);
@@ -31,6 +37,8 @@ function App() {
     setSpeak(false);
     setEar(false);
     setIsHam(false);
+    setCart(false);
+    setSee(false);
   }
   function handleSpeak() {
     setSpeak(true);
@@ -38,6 +46,8 @@ function App() {
     setHome(false);
     setEar(false);
     setIsHam(false);
+    setCart(false);
+    setSee(false);
   }
   function handleEar() {
     setEar(true);
@@ -45,24 +55,38 @@ function App() {
     setHome(false);
     setSpeak(false);
     setIsHam(false);
+    setCart(false);
+    setSee(false);
+  }
+
+  const [cartItems, setCartItems] = useState([]);
+  function handleAddedToCart(proj) {
+    proj = {
+      id: proj.id,
+      name: proj.shortName,
+      price: proj.price,
+    };
+    setCartItems([...cartItems, proj]);
+    console.log(cartItems);
   }
 
   const [produ, setProdu] = useState([]);
   const [proj, setProj] = useState([]);
   const [count, setCount] = useState(1);
+  const [add, setAdd] = useState(false);
 
   useEffect(() => {
     setProdu(products);
-    console.log(produ);
+    // console.log(produ);
+    console.log(add);
+    console.log(check);
+    console.log(see);
   });
   function handlePrev(id) {
     setSee(true);
     setProj(produ[id]);
-    // console.log(proj);
   }
   const [cart, setCart] = useState(false);
-  const [add, setAdd] = useState(false);
-  const [cartItems, setCartItems] = useState([]);
 
   return (
     <div className="app">
@@ -80,8 +104,8 @@ function App() {
           setIsHam={setIsHam}
           cart={cart}
           setCart={setCart}
-          add={add}
           setAdd={setAdd}
+          add={add}
         />
         {cart && (
           <Cart
@@ -92,6 +116,10 @@ function App() {
             cartItems={cartItems}
             setCartItems={setCartItems}
             add={add}
+            setAdd={setAdd}
+            setCheck={setCheck}
+            setSee={setSee}
+            setCart={setCart}
           />
         )}
 
@@ -117,6 +145,10 @@ function App() {
             </Route>
           </Switch>
         )}
+        {check && (
+          <Checkout setCheck={setCheck} cartItems={cartItems} count={count} />
+        )}
+
         {see && (
           <Seeproduct
             see={see}
@@ -129,6 +161,8 @@ function App() {
             setAdd={setAdd}
             cartItems={cartItems}
             setCartItems={setCartItems}
+            onAddedToCart={handleAddedToCart}
+            check={check}
           />
         )}
         <Feet
@@ -140,6 +174,7 @@ function App() {
           handleHead={handleHead}
           handleSpeak={handleSpeak}
           handleEar={handleEar}
+          check={check}
         />
       </Router>
     </div>

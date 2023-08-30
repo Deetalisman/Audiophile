@@ -17,11 +17,12 @@ function Feet({
   handleHead,
   handleHome,
   handleSpeak,
+  check,
 }) {
   return (
     <div>
       {!home && <Homedisplay />}
-      <Building />
+      {!check && <Building />}
       <Foot
         home={home}
         head={head}

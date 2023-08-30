@@ -26,6 +26,8 @@ import zx73 from "./images/product-zx7-speaker/desktop/image-gallery-3.jpg";
 import zx91 from "./images/product-zx9-speaker/desktop/image-gallery-1.jpg";
 import zx92 from "./images/product-zx9-speaker/desktop/image-gallery-2.jpg";
 import zx93 from "./images/product-zx9-speaker/desktop/image-gallery-3.jpg";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Seeproduct({
   proj,
@@ -37,13 +39,24 @@ function Seeproduct({
   setAdd,
   cartItems,
   setCartItems,
+  onAddedToCart,
+  check,
 }) {
   function handlePrav() {
     setSee(false);
   }
-
+  function handleAdd(proj) {
+    setAdd(true);
+    onAddedToCart(proj);
+    console.log(proj.id);
+    console.log(add);
+    Notify(proj);
+  }
+  function Notify(proj) {
+    toast(proj.name + " " + "has been added to cart");
+  }
   return (
-    <div className="seeproduct">
+    <div className={"seeproduct " + (check ? "none" : "")}>
       <p className="back" onClick={handlePrav}>
         Go back
       </p>
@@ -56,6 +69,8 @@ function Seeproduct({
           setAdd={setAdd}
           cartItems={cartItems}
           setCartItems={setCartItems}
+          onAddedToCart={onAddedToCart}
+          handleAdd={handleAdd}
         />
       )}
       <Alsolike handlePrev={handlePrev} />
@@ -71,10 +86,9 @@ function Seeproduct1({
   setAdd,
   cartItems,
   setCartItems,
+  onAddedToCart,
+  handleAdd,
 }) {
-  function handleAdd() {
-    setAdd(true);
-  }
   return (
     <>
       <div className="mark-prod">
@@ -113,10 +127,17 @@ function Seeproduct1({
                 +
               </p>
             </div>
-            <button id="add" className="prod-but" onClick={handleAdd}>
-              {" "}
+            <button
+              id="add"
+              className="prod-but"
+              onClick={() => handleAdd(proj)}
+            >
               ADD TO CART
             </button>
+            <ToastContainer
+              id="toast"
+              style={{ fontSize: "7rem", width: "40rem" }}
+            />
           </div>
         </div>
       </div>
