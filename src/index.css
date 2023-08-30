@@ -1129,7 +1129,25 @@ aside {
     right: 0rem;
     padding: 2rem;
     z-index: 2;
-    width: 100%;
+    width: 80%;
+  }
+  .cartim {
+    font-size: 1.3rem;
+  }
+  .cart4 p:first-child {
+    font-size: 1.6rem;
+  }
+  .cartimg {
+    width: 5rem;
+  }
+  .cartc {
+    width: 7rem;
+  }
+  .cart1 h2 {
+    font-size: 1.7rem;
+  }
+  .cart1 p {
+    font-size: 1.6rem;
   }
 }
 @media screen and (max-width: 550px) {

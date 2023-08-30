@@ -121,7 +121,7 @@ function Cartdetails({ cartItem, proj, count, setCount }) {
         />
         <div className="cart4">
           <p>{cartItem.name}</p>
-          <p>${cartItem.price}</p>
+          <p className="cartim">${cartItem.price}</p>
         </div>
       </div>
       <div className="counts cartc">
