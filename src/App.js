@@ -30,6 +30,7 @@ function App() {
     setIsHam(false);
     setCart(false);
     setSee(false);
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }
   function handleHead() {
     setHead(true);
@@ -39,6 +40,7 @@ function App() {
     setIsHam(false);
     setCart(false);
     setSee(false);
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }
   function handleSpeak() {
     setSpeak(true);
@@ -48,6 +50,7 @@ function App() {
     setIsHam(false);
     setCart(false);
     setSee(false);
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }
   function handleEar() {
     setEar(true);
@@ -57,6 +60,7 @@ function App() {
     setIsHam(false);
     setCart(false);
     setSee(false);
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }
 
   const [cartItems, setCartItems] = useState([]);
@@ -85,6 +89,7 @@ function App() {
   function handlePrev(id) {
     setSee(true);
     setProj(produ[id]);
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }
   const [cart, setCart] = useState(false);
 
