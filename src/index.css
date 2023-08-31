@@ -1000,6 +1000,9 @@ aside {
   button {
     font-size: 1.5rem;
   }
+  .cartlength {
+    right: -2rem;
+  }
   .category {
     width: 100%;
     margin-bottom: 10rem;
@@ -1204,5 +1207,8 @@ aside {
     text-align: left;
     padding-left: 2%;
     width: 60%;
+  }
+  .cartlength {
+    right: -1.5rem;
   }
 }
