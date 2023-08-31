@@ -64,14 +64,16 @@ function App() {
   }
 
   const [cartItems, setCartItems] = useState([]);
-  function handleAddedToCart(proj) {
+  function handleAddedToCart(proj, count) {
     proj = {
       id: proj.id,
       name: proj.shortName,
       price: proj.price,
+      count: count,
     };
     setCartItems([...cartItems, proj]);
     console.log(cartItems);
+    console.log(count);
   }
 
   const [produ, setProdu] = useState([]);
@@ -90,6 +92,7 @@ function App() {
     setSee(true);
     setProj(produ[id]);
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    setCount(1);
   }
   const [cart, setCart] = useState(false);
 
@@ -116,7 +119,6 @@ function App() {
           <Cart
             proj={add && proj}
             setProj={setProj}
-            count={count}
             setCount={setCount}
             cartItems={cartItems}
             setCartItems={setCartItems}

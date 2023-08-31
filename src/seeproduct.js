@@ -45,12 +45,13 @@ function Seeproduct({
   function handlePrav() {
     setSee(false);
   }
-  function handleAdd(proj) {
+  function handleAdd(proj, count) {
     setAdd(true);
-    onAddedToCart(proj);
+    onAddedToCart(proj, count);
     console.log(proj.id);
     console.log(add);
     Notify(proj);
+    console.log(count);
   }
   function Notify(proj) {
     toast(proj.name + " " + "has been added to cart");
@@ -130,7 +131,7 @@ function Seeproduct1({
             <button
               id="add"
               className="prod-but"
-              onClick={() => handleAdd(proj)}
+              onClick={() => handleAdd(proj, count)}
             >
               ADD TO CART
             </button>

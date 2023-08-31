@@ -634,6 +634,12 @@ aside {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+.checkp {
+  color: gray;
+}
+.sub-tc p:first-child {
+  font-weight: bold;
+}
 @media screen and (max-width: 1300px) {
   .speakerdisplay {
     padding: 10% 5% 4%;
@@ -877,6 +883,7 @@ aside {
     padding: 5%;
     display: none;
     padding: 10%;
+    transition: left 0.3s ease;
   }
   .list li {
     display: block;
@@ -1177,5 +1184,14 @@ aside {
   }
   .checkimg {
     width: 10rem;
+  }
+  .list li a {
+    font-size: 1.7rem;
+    text-align: left;
+  }
+  .list {
+    text-align: left;
+    padding-left: 2%;
+    width: 60%;
   }
 }

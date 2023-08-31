@@ -8,11 +8,11 @@ import zx9 from "./images/cart/image-zx9-speaker.jpg";
 import empty from "./images/cart/empty-cart.png";
 import products from "./products.json";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export function Cart({
   proj,
   setProj,
-  count,
   setCount,
   cartItems,
   setCartItems,
@@ -28,7 +28,6 @@ export function Cart({
       {add && (
         <Beforecard
           proj={add && proj}
-          count={count}
           setCount={setCount}
           cartItems={cartItems}
           setCartItems={setCartItems}
@@ -52,7 +51,6 @@ function Cartisempty() {
 }
 function Beforecard({
   proj,
-  count,
   setCount,
   cartItems,
   setCartItems,
@@ -73,26 +71,26 @@ function Beforecard({
           Remove all
         </p>
       </div>
-      <AddedToCart count={count} setCount={setCount} cartItems={cartItems} />
+      <AddedToCart proj={proj} setCount={setCount} cartItems={cartItems} />
+      <Price cartItems={cartItems} />
       <Checkout setSee={setSee} setCart={setCart} setCheck={setCheck} />
     </div>
   );
 }
 
-function AddedToCart({ cartItems, count, setCount }) {
+function AddedToCart({ cartItems, proj, setCount }) {
   return (
     <div className="cartcart">
       <ul>
         {cartItems?.map((cartItem) => (
           <Cartdetails
             cartItem={cartItem}
-            count={count}
+            proj={proj}
             setCount={setCount}
             key={cartItem.id}
           />
         ))}
       </ul>
-      <Price cartItems={cartItems} />
     </div>
   );
 }
@@ -128,7 +126,7 @@ function Cartdetails({ cartItem, proj, count, setCount }) {
         <p className="coun" onClick={() => count > 1 && setCount(count - 1)}>
           -
         </p>
-        <p>{count}</p>
+        <p>{cartItem.count}</p>
         <p className="coun" onClick={() => setCount(count + 1)}>
           +
         </p>
@@ -137,11 +135,12 @@ function Cartdetails({ cartItem, proj, count, setCount }) {
   );
 }
 
-function Price({ cartItems, count }) {
+function Price({ cartItems }) {
+  let total = 0;
   return (
     <div className="cart5">
       <p>TOTAL</p>
-      <p>${cartItems.map((cartItem) => cartItem.price)}</p>
+      <p>${cartItems.reduce((acc, cur) => acc + cur.price * cur.count, 0)}</p>
     </div>
   );
 }

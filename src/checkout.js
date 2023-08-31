@@ -264,7 +264,7 @@ function Checkoutform({ cartItems, count, setCheckout }) {
       <mark>
         <h2>SUMMARY</h2>
         <AddedToCart cartItems={cartItems} count={count} />
-        <Totalcheck handleSubmit={handleSubmit} />
+        <Totalcheck handleSubmit={handleSubmit} cartItems={cartItems} />
       </mark>
     </div>
   );
@@ -309,30 +309,38 @@ function Cartdetails({ cartItem, count }) {
           <p>${cartItem.price}</p>
         </div>
       </div>
-      <p className="checkcount">x{count}</p>
+      <p className="checkcount">x{cartItem.count}</p>
     </div>
   );
 }
 
-function Totalcheck({ handleSubmit }) {
+function Totalcheck({ handleSubmit, cartItems }) {
+  let Checktotal = cartItems.reduce(
+    (acc, cur) => acc + cur.price * cur.count,
+    0
+  );
+  let Checkvat = cartItems.reduce(
+    (acc, cur) => Math.floor((acc + cur.price * cur.count * 10) / 100),
+    0
+  );
   return (
     <div className="totalcheck">
       <div className="sub-tc">
         <p>TOTAL</p>
-        <p>$11,000</p>
+        <p className="checkp">${Checktotal}</p>
       </div>
       <div className="sub-tc">
         <p>SHIPPING</p>
-        <p>$50</p>
+        <p className="checkp">$50</p>
       </div>
       <div className="sub-tc">
         <p>VAT(INCLUDED)</p>
-        <p>$2,396</p>
+        <p className="checkp">${Checkvat}</p>
       </div>
 
       <div className="sub-tc">
         <p>GRAND TOTAL</p>
-        <p>$15,000</p>
+        <p className="checkp">${Checktotal + 50 + Checkvat}</p>
       </div>
       <button className="continue" onClick={handleSubmit}>
         CONTINUE & PAY
