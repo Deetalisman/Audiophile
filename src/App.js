@@ -114,6 +114,7 @@ function App() {
           setCart={setCart}
           setAdd={setAdd}
           add={add}
+          cartItems={cartItems}
         />
         {cart && (
           <Cart

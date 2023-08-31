@@ -640,6 +640,17 @@ aside {
 .sub-tc p:first-child {
   font-weight: bold;
 }
+.cartcartt {
+  position: relative;
+}
+.cartlength {
+  position: absolute;
+  background-color: tomato;
+  padding: 0.6rem 1rem;
+  border-radius: 50%;
+  top: -1.9rem;
+  right: -3rem;
+}
 @media screen and (max-width: 1300px) {
   .speakerdisplay {
     padding: 10% 5% 4%;

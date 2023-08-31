@@ -17,6 +17,7 @@ function Head({
   setCart,
   add,
   setAdd,
+  cartItems,
 }) {
   function handleList() {
     setIsHam((isHam) => !isHam);
@@ -53,7 +54,10 @@ function Head({
           </Link>
         </li>
       </ul>
-      <img src={cart1} alt="cart" id="cart" onClick={handleCart} />
+      <div className="cartcartt">
+        <img src={cart1} alt="cart" id="cart" onClick={handleCart} />
+        {add && <p className="cartlength">{cartItems.length}</p>}
+      </div>
     </div>
   );
 }
