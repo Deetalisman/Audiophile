@@ -8,7 +8,14 @@ import zx7 from "./images/cart/image-zx7-speaker.jpg";
 import zx9 from "./images/cart/image-zx9-speaker.jpg";
 import checkimg from "./images/checkout/icon-cash-on-delivery.svg";
 import { useState } from "react";
-function Checkout({ setCheck, cartItems, count, setSee }) {
+function Checkout({
+  setCheck,
+  cartItems,
+  count,
+  setSee,
+  setCartItems,
+  setAdd,
+}) {
   function handleGoback() {
     setCheck(false);
   }
@@ -28,6 +35,8 @@ function Checkout({ setCheck, cartItems, count, setSee }) {
           setCheckout={setCheckout}
           setCheck={setCheck}
           setSee={setSee}
+          setCartItems={setCartItems}
+          setAdd={setAdd}
         />
       )}
     </div>
@@ -40,6 +49,7 @@ function Checkoutform({ cartItems, count, setCheckout }) {
     console.log(actions);
     actions.resetForm();
     setCheckout(true);
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
   const basicSchema = yup.object().shape({
     name: yup.string().required("Required").min(6),
@@ -349,23 +359,28 @@ function Totalcheck({ handleSubmit, cartItems }) {
   );
 }
 
-function Completed({ setCheckout, setCheck, setSee }) {
+function Completed({ setCheckout, setCheck, setSee, setCartItems, setAdd }) {
   return (
     <div className="completed">
       <Maincomplete
         setCheckout={setCheckout}
         setCheck={setCheck}
         setSee={setSee}
+        setCartItems={setCartItems}
+        setAdd={setAdd}
       />
     </div>
   );
 }
 
-function Maincomplete({ setCheckout, setCheck, setSee }) {
+function Maincomplete({ setCheckout, setCheck, setSee, setCartItems, setAdd }) {
   function handlecheckout() {
     setCheckout(false);
     setCheck(false);
     setSee(false);
+    setCartItems([]);
+    setAdd(false);
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }
   return (
     <div className="maincomplete">

@@ -158,6 +158,8 @@ function App() {
             cartItems={cartItems}
             count={count}
             setSee={setSee}
+            setCartItems={setCartItems}
+            setAdd={setAdd}
           />
         )}
 
